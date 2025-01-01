@@ -1,12 +1,35 @@
-import { brainwaveSymbol, check } from "../assets";
+import  { check } from "../assets";
+import logo from "../assets/logo.png";
 import { collabApps, collabContent, collabText } from "../constants";
 import Button from "./Button";
 import Section from "./Section";
 import { LeftCurve, RightCurve } from "./design/Collaboration";
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all";
+import {useGSAP} from "@gsap/react"
 
-const Collaboration = () => {
+gsap.registerPlugin(ScrollTrigger);
+const Collaboration = () => { 
+
+  useGSAP(() => {
+    gsap.set("#tool-wheel", {
+      rotate: "0deg",
+    });
+
+    gsap.from("#tool-wheel", {
+      rotate: "180deg",
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#tool-wheel",
+        start: "-1600px center",
+        end: "center center",
+        scrub: true,
+      },
+    });
+  });
+  
   return (
-    <Section crosses>
+    <Section crosses id={"strategy"}>
       <div className="container lg:flex">
         <div className="max-w-[25rem]">
           <h2 className="h2 mb-4 md:mb-8">
@@ -40,7 +63,7 @@ const Collaboration = () => {
               <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">
                 <div className="flex items-center justify-center w-full h-full bg-n-8 rounded-full">
                   <img
-                    src={brainwaveSymbol}
+                    src={logo}
                     width={48}
                     height={48}
                     alt="brainwave"
@@ -49,7 +72,7 @@ const Collaboration = () => {
               </div>
             </div>
 
-            <ul>
+            <ul id="tool-wheel" className="translate-all duration-[2s] relative left-[-175px]">
               {collabApps.map((app, index) => (
                 <li
                   key={app.id}

@@ -39,35 +39,28 @@ import {
 export const navigation = [
   {
     id: "0",
-    title: "Features",
-    url: "#features",
+    title: "Home",
+    url: "#hero",
   },
   {
     id: "1",
-    title: "Pricing",
-    url: "#pricing",
+    title: "Testimonials",
+    url: "#features",
   },
   {
     id: "2",
-    title: "How to use",
+    title: "Our Strategy",
+    url: "#strategy",
+  },
+  {
+    id: "3",
+    title: "Case Study",
     url: "#how-to-use",
   },
   {
     id: "3",
-    title: "Roadmap",
-    url: "#roadmap",
-  },
-  {
-    id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
-  },
-  {
-    id: "5",
-    title: "Sign in",
-    url: "#login",
-    onlyMobile: true,
+    title: "Appointment",
+    url: "#pricing",
   },
 ];
 
@@ -244,7 +237,7 @@ export const pricing = [
 export const benefits = [
   {
     id: "0",
-    title: "Ask anything",
+    title: "Client 1",
     text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
     backgroundUrl: "./src/assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,

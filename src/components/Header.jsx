@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-
-import { brainwave } from "../assets";
+import logoBanner from "../assets/logo-banner-removebg.png";
 import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
@@ -35,9 +34,9 @@ const Header = () => {
         openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
       }`}
     >
-      <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
+      <div className="flex items-center whitespace-nowrap px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <img src={brainwave} width={190} height={40} alt="Brainwave" />
+          <img src={logoBanner} width={150} className="object-cover h-10" alt="Brainwave" />
         </a>
 
         <nav
@@ -68,13 +67,12 @@ const Header = () => {
         </nav>
 
         <a
-          href="#signup"
-          className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
+          className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block select-none"
         >
-          New account
+          Clients Slots Left:
         </a>
-        <Button className="hidden lg:flex" href="#login">
-          Sign in
+        <Button className="hidden lg:flex">
+          420
         </Button>
 
         <Button
