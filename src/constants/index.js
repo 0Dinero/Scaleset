@@ -53,14 +53,14 @@ export const navigation = [
     url: "#strategy",
   },
   {
-    id: "3",
-    title: "Case Study",
+    id: "4",
+    title: "Book A Call",
     url: "#how-to-use",
   },
   {
     id: "3",
-    title: "Appointment",
-    url: "#pricing",
+    title: "Case Study",
+    url: "#roadmap",
   },
 ];
 

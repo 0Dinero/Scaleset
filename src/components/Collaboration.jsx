@@ -33,7 +33,7 @@ const Collaboration = () => {
       <div className="container lg:flex">
         <div className="max-w-[25rem]">
           <h2 className="h2 mb-4 md:mb-8">
-            AI Chat App for seamless collaboration
+            How we do what we do
           </h2>
 
           <ul className="max-w-[22rem] mb-10 md:mb-14">

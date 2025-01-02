@@ -36,7 +36,7 @@ const Header = () => {
     >
       <div className="flex items-center whitespace-nowrap px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <img src={logoBanner} width={150} className="object-cover h-10" alt="Brainwave" />
+          <img src={logoBanner} width={190} className="object-cover h-10" alt="Brainwave" />
         </a>
 
         <nav
@@ -52,7 +52,7 @@ const Header = () => {
                 onClick={handleClick}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                } px-6 py-6 md:py-8 lg:-mx-5 lg:text-xs lg:font-semibold ${
                   item.url === pathname.hash
                     ? "z-2 lg:text-n-1"
                     : "lg:text-n-1/50"
@@ -67,7 +67,7 @@ const Header = () => {
         </nav>
 
         <a
-          className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block select-none"
+          className="button hidden mr-8 transition-colors text-[#FFD000] lg:block select-none"
         >
           Clients Slots Left:
         </a>
