@@ -11,7 +11,7 @@ const CompanyLogos = ({ className }) => {
         {companyLogos.map((logo, index) => {
           if (index === 2) {
             return (
-              <button className="mx-16 ">
+              <button className="mx-16" key={index}>
                 <a className="border-color-1 rounded-xl border-2 px-4 py-3 transition-all duration-500 hover:text-[#FFD000] hover:bg-color-1" href="#how-to-use">
                   Book A Call
                 </a>
