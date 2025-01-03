@@ -4,16 +4,95 @@ import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
-import { useRef } from "react";
+import {useEffect, useRef, useState } from "react";
 import Notification from "./Notification";
+import logoBanner from "../assets/logo-banner-removebg.png";
 import CompanyLogos from "./CompanyLogos";
+import Input from "./Input";
+
+
+const PopUp = ({popUp, setPopUp}) => {
+  const [user, setUser] = useState('');
+  const [email, setEmail] = useState('');
+
+   const handleSubmit = async (e) => {
+     e.preventDefault();
+     const name = user;
+     const emailValue = email;
+     const webhookUrl ="https://discordapp.com/api/webhooks/1324678401151336510/cHF7wXXYSoT3tMhADLJS7Xl2ATFvVI_5P16QQLmK2D1z0xE8PaGhccw5gKgL3Y6lhc71";
+
+   
+     const messageContent = `New Form Submission:\n- **Name**: ${name}\n- **Email**: ${emailValue}`;
+
+     try {
+       // Send data to Discord Webhook
+       await fetch(webhookUrl, {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify({
+           content: messageContent,
+         }),
+       });
+
+       alert("Form submitted successfully! Message sent to Discord.");
+       setPopUp(false); // Close the popup
+     } catch (error) {
+       console.error("Error sending message to Discord:", error);
+       alert("Failed to send message to Discord.");
+     }
+   };
+
+  return (
+    <div className="popup_window fixed top-[20%] left-[20%] rounded-xl px-3 py-7 bg-black h-[60dvh] w-[60dvw]" style={{zIndex: `${popUp ? "9999" : "-1"} `}}>
+      <div className="flex justify-center max-md:justify-center lg:justify-start">
+        <img src={logoBanner} alt="logo" width={180} height={100} className="object-cover h-10" />
+      </div>
+      <form onSubmit={handleSubmit} className="h-80 w-full flex justify-center items-center flex-col gap-[10%]">
+        <div className="w-[90%] md:w-[60%] lg:w-[40%]">
+          <Input title={"Name"} set={setUser} value={user}/>
+        </div>
+        <div className="w-[90%] md:w-[60%] lg:w-[40%]">
+          <Input title={"Email"} set={setEmail} value={email}/>
+        </div>
+        <div className="">
+          <button type="submit" className="hover:text-color-1 transition-colors duration-300">Continue Watching The Video</button>
+        </div>
+      </form>
+    </div>      
+  )
+}
+
 
 const Hero = () => {
   const parallaxRef = useRef(null);
   const videoRef = useRef(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const [popUp, setPopUp] = useState(false);
+  const [hasLoggedIn, setHasLoggedIn] = useState(false)
+
   const handleVideoPlay = () => {
-    videoRef.current.play();
+    if(!isVideoPlaying){
+      setPopUp(true);
+      videoRef.current.play();
+      setIsVideoPlaying(true);
+    } else if (isVideoPlaying) {
+      setPopUp(false);
+      videoRef.current.pause();
+      setIsVideoPlaying(false);
+    }
   }
+
+  // useEffect(() => {
+  //   if (popUp){
+  //     videoRef.current.pause();
+  //     setIsVideoPlaying(false);
+  //   } else {
+  //     videoRef.current.play();
+  //     setIsVideoPlaying(true);
+  //   }
+  // },[popUp])
 
   return (
     <Section
@@ -46,6 +125,8 @@ const Hero = () => {
             <Button white>Book a call</Button>
           </a>
         </div>
+
+        {popUp && <PopUp popUp={popUp} setPopUp={setPopUp}/>}
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           <a onClick={handleVideoPlay} className="hover:cursor-pointer">
             <div className="play-icon absolute text-9xl font-bold text-black">

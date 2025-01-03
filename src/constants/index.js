@@ -34,6 +34,9 @@ import {
   telegram,
   twitter,
   yourlogo,
+  scaleset,
+  scalesetBanner,
+  scalesetBannerBg,
 } from "../assets";
 
 export const navigation = [
@@ -68,7 +71,7 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
 
-export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
+export const companyLogos = [scalesetBanner, scalesetBanner, yourlogo, scalesetBanner, scalesetBanner];
 
 export const brainwaveServices = [
   "Photo generating",
@@ -201,35 +204,38 @@ export const collabApps = [
 export const pricing = [
   {
     id: "0",
-    title: "Basic",
-    description: "AI chatbot, personalized recommendations",
+    title: "Done-For-You",
+    description:
+      "We manage your client acquisition - from custom campaigns to booking appointments - so you can focus on your business. Tailored for maximum results with minimal effort.",
     price: "0",
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "Custom campaigns designed to acquire high-quality clients effortlessly",
+      "Automated appointment booking system for streamlined client interactions",
+      "Tailored strategies that maximize results with minimal time investment",
     ],
   },
   {
     id: "1",
-    title: "Premium",
-    description: "Advanced AI chatbot, priority support, analytics dashboard",
+    title: "Done-With-You",
+    description:
+      "Learn to master appointment setting with our training and guidance. Gain the skills to run effective campaigns independently - ideal for businesses on a budget or seeking in-house control.",
     price: "9.99",
     features: [
-      "An advanced AI chatbot that can understand complex queries",
-      "An analytics dashboard to track your conversations",
-      "Priority support to solve issues quickly",
+      "Comprehensive training on mastering appointment setting for long-term success",
+      "Step-by-step guidance to run cost-effective campaigns without external help",
+      "Tools and resources designed for businesses seeking in-house control and autonomy",
     ],
   },
   {
     id: "2",
-    title: "Enterprise",
-    description: "Custom AI chatbot, advanced analytics, dedicated account",
+    title: "Done-For-You + Closing",
+    description:
+      "A fully hands-off solution: we handle outreach, book appointments, and close deals for you. Focus on your service while we manage everything from prospecting to client onboarding. Perfect for maximizing results without spending time on sales.",
     price: null,
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "Complete outsourcing of outreach, appointment booking, and deal closure",
+      "End-to-end management from prospecting to client onboarding, allowing you to focus on your service",
+      "Maximized results without spending time on sales, ideal for businesses looking for efficiency",
     ],
   },
 ];

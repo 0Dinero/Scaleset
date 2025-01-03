@@ -23,7 +23,6 @@ const Header = () => {
 
   const handleClick = () => {
     if (!openNavigation) return;
-
     enablePageScroll();
     setOpenNavigation(false);
   };
@@ -36,7 +35,12 @@ const Header = () => {
     >
       <div className="flex items-center whitespace-nowrap px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <img src={logoBanner} width={190} className="object-cover h-10" alt="Brainwave" />
+          <img
+            src={logoBanner}
+            width={190}
+            className="object-cover h-10"
+            alt="Brainwave"
+          />
         </a>
 
         <nav
@@ -52,11 +56,7 @@ const Header = () => {
                 onClick={handleClick}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 md:py-8 lg:-mx-5 lg:text-xs lg:font-semibold ${
-                  item.url === pathname.hash
-                    ? "z-2 lg:text-n-1"
-                    : "lg:text-n-1/50"
-                } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+                } px-6 py-6 md:py-8 lg:-mx-5 lg:text-xs lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1 xl:px-12`}
               >
                 {item.title}
               </a>
@@ -66,14 +66,10 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        <a
-          className="button hidden mr-8 transition-colors text-[#FFD000] lg:block select-none"
-        >
+        <a className="button hidden mr-8 transition-colors text-[#FFD000] lg:block select-none">
           Clients Slots Left:
         </a>
-        <Button className="hidden lg:flex">
-          420
-        </Button>
+        <Button className="hidden lg:flex">420</Button>
 
         <Button
           className="ml-auto lg:hidden"

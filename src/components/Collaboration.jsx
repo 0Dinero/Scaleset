@@ -50,7 +50,9 @@ const Collaboration = () => {
             ))}
           </ul>
 
-          <Button>Try it now</Button>
+          <a href="#how-to-use">
+            <Button>Book A Call</Button>
+          </a>
         </div>
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">
