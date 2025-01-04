@@ -226,18 +226,6 @@ export const pricing = [
       "Tools and resources designed for businesses seeking in-house control and autonomy",
     ],
   },
-  {
-    id: "2",
-    title: "Done-For-You + Closing",
-    description:
-      "A fully hands-off solution: we handle outreach, book appointments, and close deals for you. Focus on your service while we manage everything from prospecting to client onboarding. Perfect for maximizing results without spending time on sales.",
-    price: null,
-    features: [
-      "Complete outsourcing of outreach, appointment booking, and deal closure",
-      "End-to-end management from prospecting to client onboarding, allowing you to focus on your service",
-      "Maximized results without spending time on sales, ideal for businesses looking for efficiency",
-    ],
-  },
 ];
 
 export const benefits = [
