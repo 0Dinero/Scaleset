@@ -4,7 +4,6 @@ import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { useEffect, useRef } from "react";
-import card3 from "../assets/benefits/card-3.svg";
 
 const Benefits = () => {
   const scrollContainerRef = useRef(null);
@@ -13,7 +12,7 @@ const Benefits = () => {
     const container = scrollContainerRef.current;
 
     if (container) {
-      const scrollSpeed = 1;
+      const scrollSpeed = 10;
       let animationFrame;
 
       const originalContent = container.innerHTML;
@@ -50,10 +49,7 @@ const Benefits = () => {
         >
           {benefits.map((item, index) => (
             <div
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] w-[70dvw] md:w-[40vw] lg:w-[25svw]"
-              style={{
-                backgroundImage: `url(${card3})`,
-              }}
+              className="testimonial block relative p-0.5 bg-no-repeat bg-[length:100%_100%] w-[70dvw] md:w-[40vw] lg:w-[25svw]"
               key={index}
             >
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none w-[70dvw] md:w-[40vw] lg:w-[25vw]">
@@ -67,9 +63,10 @@ const Benefits = () => {
                     alt={item.title}
                   />
                   <div className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                    <div className="flex flex-col pr-4">
+                    <div className="flex flex-col pr-4 mb-1">
                       {item.clientName}
-                      <img src={item.stars} alt="stars" width={50} />
+                      <div className="font-normal opacity-80 text-xs">{item.clientPosition}</div>
+                      <img src={item.stars} alt="stars" width={50} className="h-4 object-cover" />
                     </div>
                   </div>
                 </div>

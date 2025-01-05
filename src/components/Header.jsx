@@ -66,9 +66,9 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        <a className="button hidden mr-8 transition-colors text-[#FFD000] lg:block select-none">
+        <div className="button hidden mr-8 transition-colors text-[#FFD000] lg:block select-none">
           Clients Slots Left:
-        </a>
+        </div>
         <Button className="hidden lg:flex">420</Button>
 
         <Button

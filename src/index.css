@@ -117,3 +117,9 @@
     hsl(0deg 0% 0%) 100%
   );
 }
+
+.testimonial{
+  background-color: #6247D6;
+  clip-path: polygon(87% 0, 100% 14.4%, 100% 100%, 0 100%, 0 0);
+  border-radius: 30px;
+}
