@@ -45,7 +45,7 @@ const PopUp = ({popUp, setPopUp}) => {
    };
 
   return (
-    <div className="popup_window fixed top-[20%] left-[20%] rounded-xl px-3 py-7 bg-black h-[60dvh] w-[60dvw]" style={{zIndex: `${popUp ? "9999" : "-1"} `}}>
+    <div className="popup_window fixed top-[20%] left-[10%] rounded-xl px-3 py-7 bg-black h-[60dvh] w-[80dvw] lg:w-[60dvw] lg:left-[20%]" style={{zIndex: `${popUp ? "9999" : "-1"} `}}>
       <div className="flex justify-center max-md:justify-center lg:justify-start">
         <img src={logoBanner} alt="logo" width={180} height={100} className="object-cover h-10" />
       </div>
