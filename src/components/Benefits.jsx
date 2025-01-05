@@ -4,8 +4,6 @@ import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { useEffect, useRef } from "react";
-import { fiveStar, fourStar, threeStar, twoStar } from "../assets";
-
 const Benefits = () => {
   const scrollContainerRef = useRef(null);
 
@@ -13,7 +11,7 @@ const Benefits = () => {
     const container = scrollContainerRef.current;
 
     if (container) {
-      const scrollSpeed = 1; // Adjust scrolling speed (pixels per frame)
+      const scrollSpeed = 1;
       let animationFrame;
 
       const originalContent = container.innerHTML;

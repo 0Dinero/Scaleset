@@ -4,7 +4,7 @@ import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
-import {useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Notification from "./Notification";
 import logoBanner from "../assets/logo-banner-removebg.png";
 import CompanyLogos from "./CompanyLogos";
