@@ -1,8 +1,5 @@
 import {
   benefitIcon1,
-  benefitIcon2,
-  benefitIcon3,
-  benefitIcon4,
   benefitImage2,
   chromecast,
   disc02,
@@ -33,11 +30,13 @@ import {
   sliders04,
   telegram,
   twitter,
-  yourlogo,
   scaleset,
   scalesetBanner,
   scalesetBannerBg,
-  stars,
+  fiveStar,
+  fourStar,
+  threeStar,
+  twoStar,
 } from "../assets";
 
 export const navigation = [
@@ -72,7 +71,7 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
 
-export const companyLogos = [scalesetBanner, scalesetBanner, yourlogo, scalesetBanner, scalesetBanner];
+export const companyLogos = [scalesetBanner, scalesetBanner, "" , scalesetBanner, scalesetBanner];
 
 export const brainwaveServices = [
   "Photo generating",
@@ -234,7 +233,7 @@ export const benefits = [
     id: "0",
     title: "Company 1",
     text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    stars: 4,
+    stars: fiveStar,
     clientName: "Client 1",
     backgroundUrl: "./src/assets/benefits/card-1.svg",
     ClientPfp: benefitIcon1,
@@ -244,7 +243,7 @@ export const benefits = [
     id: "1",
     title: "Company 1",
     text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    stars: 4,
+    stars: threeStar,
     clientName: "Client 1",
     backgroundUrl: "./src/assets/benefits/card-2.svg",
     ClientPfp: benefitIcon1,
@@ -254,7 +253,7 @@ export const benefits = [
     id: "2",
     title: "Company 1",
     text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    stars: 4,
+    stars: fourStar,
     clientName: "Client 1",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     ClientPfp: benefitIcon1,
@@ -264,7 +263,7 @@ export const benefits = [
     id: "3",
     title: "Company 1",
     text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    stars: 4,
+    stars: fiveStar,
     clientName: "Client 1",
     backgroundUrl: "./src/assets/benefits/card-4.svg",
     ClientPfp: benefitIcon1,
@@ -274,7 +273,7 @@ export const benefits = [
     id: "4",
     title: "Company 1",
     text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    stars: 4,
+    stars: fiveStar,
     clientName: "Client 1",
     backgroundUrl: "./src/assets/benefits/card-5.svg",
     ClientPfp: benefitIcon1,

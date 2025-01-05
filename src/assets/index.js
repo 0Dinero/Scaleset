@@ -8,7 +8,6 @@ import smallSphere from "./4-small.png";
 import grid from "./grid.png";
 import check2 from "./check-02.svg";
 import loading1 from "./loading-01.svg";
-import yourlogo from "./yourlogo.svg";
 import homeSmile from "./home-smile.svg";
 import file02 from "./file-02.svg";
 import searchMd from "./search-md.svg";
@@ -75,8 +74,17 @@ import facebook from "./socials/facebook.svg";
 import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
+import fiveStar from "./5-star.png"
+import fourStar from "./4-star.png"
+import threeStar from "./3-star.png"
+import twoStar from "./2-star.png"
+
 
 export {
+  fiveStar,
+  fourStar,
+  threeStar,
+  twoStar,
   scaleset,
   scalesetBannerBg,
   scalesetBanner,
@@ -91,7 +99,6 @@ export {
   gradient,
   smallSphere,
   grid,
-  yourlogo,
   homeSmile,
   file02,
   searchMd,

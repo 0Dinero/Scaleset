@@ -4,6 +4,7 @@ import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { useEffect, useRef } from "react";
+import { fiveStar, fourStar, threeStar, twoStar } from "../assets";
 
 const Benefits = () => {
   const scrollContainerRef = useRef(null);
@@ -65,12 +66,12 @@ const Benefits = () => {
                     height={48}
                     alt={item.title}
                   />
-                  <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                    {item.clientName}
-                    <div className="block">
-                      {item.stars}
+                  <div className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
+                    <div className="flex flex-col pr-4">
+                      {item.clientName}
+                      <img src={item.stars} alt="stars" width={50} />
                     </div>
-                  </p>
+                  </div>
                 </div>
               </div>
 
