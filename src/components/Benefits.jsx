@@ -4,6 +4,8 @@ import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { useEffect, useRef } from "react";
+import card3 from "../assets/benefits/card-3.svg";
+
 const Benefits = () => {
   const scrollContainerRef = useRef(null);
 
@@ -50,7 +52,7 @@ const Benefits = () => {
             <div
               className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] w-[70dvw] md:w-[40vw] lg:w-[25svw]"
               style={{
-                backgroundImage: `url(./src/assets/benefits/card-3.svg)`,
+                backgroundImage: `url(${card3})`,
               }}
               key={index}
             >
