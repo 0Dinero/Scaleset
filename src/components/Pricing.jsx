@@ -28,8 +28,8 @@ const Pricing = () => {
         </div>
 
         <Heading
-          tag="Get started with Brainwave"
-          title="Pay once, use forever"
+          tag="Get started with Scale Set"
+          title="Our Services That Help You Scale"
         />
 
         <div className="relative">

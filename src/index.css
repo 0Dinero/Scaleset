@@ -119,7 +119,7 @@
 }
 
 .testimonial{
-  background-color: #6247D6;
+  background: linear-gradient(to right bottom, #4820A3 25%, #CCB000);
   clip-path: polygon(87% 0, 100% 14.4%, 100% 100%, 0 100%, 0 0);
-  border-radius: 30px;
+  border-radius: 8% 17% 9% 8% / 8% 20% 9% 8% ;
 }

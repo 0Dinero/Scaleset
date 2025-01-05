@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import logoBanner from "../assets/logo-banner-removebg.png";
 import { navigation } from "../constants";
@@ -8,7 +7,6 @@ import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
 
 const Header = () => {
-  const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
