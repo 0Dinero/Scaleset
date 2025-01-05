@@ -80,7 +80,20 @@ import threeStar from "./3-star.png"
 import twoStar from "./2-star.png"
 
 
+import cardOne from "./benefits/card-1.svg";
+import cardTwo from "./benefits/card-2.svg";
+import cardThree from "./benefits/card-3.svg";
+import cardFour from "./benefits/card-4.svg";
+import cardFive from "./benefits/card-5.svg";
+import cardSix from "./benefits/card-6.svg";
+
 export {
+  cardOne,
+  cardTwo,
+  cardThree,
+  cardFour,
+  cardFive,
+  cardSix,
   fiveStar,
   fourStar,
   threeStar,
