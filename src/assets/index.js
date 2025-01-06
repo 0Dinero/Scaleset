@@ -56,7 +56,6 @@ import notification1 from "./notification/image-1.png";
 import notification2 from "./notification/image-2.png";
 import notification3 from "./notification/image-3.png";
 import notification4 from "./notification/image-4.png";
-import video1 from "./videos/hero-1.webm"
 import benefitCard1 from "./benefits/card-1.svg";
 import benefitCard2 from "./benefits/card-2.svg";
 import benefitCard3 from "./benefits/card-3.svg";
@@ -69,17 +68,14 @@ import benefitIcon4 from "./benefits/icon-4.svg";
 import benefitImage2 from "./benefits/image-2.png";
 
 import discordBlack from "./socials/discord.svg";
-import facebook from "./socials/facebook.svg";
+import facebook from "./socials/email.svg";
 import instagram from "./socials/instagram.svg";
-import telegram from "./socials/telegram.svg";
+import telegram from "./socials/linkedin.svg";
 import twitter from "./socials/twitter.svg";
 import fiveStar from "./5-star.png"
 import fourStar from "./4-star.png"
 import threeStar from "./3-star.png"
 import twoStar from "./2-star.png"
-
-
-
 
 export {
   fiveStar,
@@ -91,7 +87,7 @@ export {
   scalesetBanner,
   brainwave,
   check,
-  video1,
+
   check2,
   loading1,
   brainwaveSymbol,

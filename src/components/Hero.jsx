@@ -1,92 +1,114 @@
-import { curve, heroBackground, video1 } from "../assets";
-import Section from "./Section";
-import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { useRef, useState, useEffect } from "react";
+import { curve, heroBackground } from "../assets";
+import Section from "./Section";
+import { BackgroundCircles, BottomLine } from "./design/Hero";
 import logoBanner from "../assets/logo-banner-removebg.png";
 import CompanyLogos from "./CompanyLogos";
 import Input from "./Input";
 
+const PopUp = ({ popUp, setPopUp, setHasLoggedIn, onFormSubmit }) => {
+  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
 
-const PopUp = ({popUp, setPopUp, setHasLoggedIn}) => {
-  const [user, setUser] = useState('');
-  const [email, setEmail] = useState('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const name = user;
+    const emailValue = email;
+    const webhookUrl = "https://discordapp.com/api/webhooks/1324678401151336510/cHF7wXXYSoT3tMhADLJS7Xl2ATFvVI_5P16QQLmK2D1z0xE8PaGhccw5gKgL3Y6lhc71";
 
-   const handleSubmit = async (e) => {
-     e.preventDefault();
-     const name = user;
-     const emailValue = email;
-     const webhookUrl ="https://discord.com/api/webhooks/1325475986287890516/PANObR92uRU2-eCuR12Hl20qokKeLkGyWpPmq15momL_md_fK4h_0fIXNOZ7m28Q7FtH";
+    const messageContent = `New Form Submission:\n- **Name**: ${name}\n- **Email**: ${emailValue}`;
 
-   
-     const messageContent = `New Form Submission:\n- **Name**: ${name}\n- **Email**: ${emailValue}`;
+    try {
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          content: messageContent,
+        }),
+      });
 
-     try {
-       // Send data to Discord Webhook
-       await fetch(webhookUrl, {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify({
-           content: messageContent,
-         }),
-       });
-
-       setHasLoggedIn(true);
-       setPopUp(false); // Close the popup
-     } catch (error) {
-       console.error("Error sending message to Discord:", error);
-     }
-   };
+      setHasLoggedIn(true);
+      setPopUp(false); // Close the popup
+      onFormSubmit(); // Trigger video play after form submission
+    } catch (error) {
+      console.error("Error sending message to Discord:", error);
+    }
+  };
 
   return (
-    <div className="popup_window fixed top-[20%] left-[10%] rounded-xl px-3 py-7 bg-black h-[60dvh] w-[80dvw] lg:w-[60dvw] lg:left-[20%]" style={{zIndex: `${popUp ? "9999" : "-1"} `}}>
+    <div
+      className="popup_window fixed top-[20%] left-[10%] rounded-xl px-3 py-7 bg-black h-[60dvh] w-[80dvw] lg:w-[60dvw] lg:left-[20%]"
+      style={{ zIndex: `${popUp ? "9999" : "-1"}` }}
+    >
       <div className="flex justify-center max-md:justify-center lg:justify-start">
-        <img src={logoBanner} alt="logo" width={180} height={100} className="object-cover h-10" />
+        <img
+          src={logoBanner}
+          alt="logo"
+          width={180}
+          height={100}
+          className="object-cover h-10"
+        />
       </div>
-      <form onSubmit={handleSubmit} className="h-80 w-full flex justify-center items-center flex-col gap-[10%]">
+      <form
+        onSubmit={handleSubmit}
+        className="h-80 w-full flex justify-center items-center flex-col gap-[10%]"
+      >
         <div className="w-[90%] md:w-[60%] lg:w-[40%]">
-          <Input title={"Name"} set={setUser} value={user}/>
+          <Input title={"Name"} set={setUser} value={user} />
         </div>
         <div className="w-[90%] md:w-[60%] lg:w-[40%]">
-          <Input title={"Email"} set={setEmail} value={email}/>
+          <Input title={"Email"} set={setEmail} value={email} />
         </div>
         <div className="">
-          <button type="submit" className="hover:text-color-1 transition-colors duration-300">Continue Watching The Video</button>
+          <button
+            type="submit"
+            className="hover:text-color-1 transition-colors duration-300"
+          >
+            Continue Watching The Video
+          </button>
         </div>
       </form>
-    </div>      
-  )
-}
-
+    </div>
+  );
+};
 
 const Hero = () => {
   const parallaxRef = useRef(null);
-  const videoRef = useRef(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [popUp, setPopUp] = useState(false);
-  const [hasLoggedIn, setHasLoggedIn] = useState(false)
+  const [hasLoggedIn, setHasLoggedIn] = useState(false);
+  const [overlayActive, setOverlayActive] = useState(true);
+  const [player, setPlayer] = useState(null); // Reference for the YouTube player
 
-  const handleVideoPlay = () => {
-    if(!hasLoggedIn){
-      videoRef.current.pause();
-      setPopUp(true)
-    } else {
-      setPopUp(false)
-    }
-  }
-
+  // Initialize the YouTube player
   useEffect(() => {
-    if(popUp){
-      console.log("video is paused")
-      videoRef.current.pause();
-      setIsVideoPlaying(false);
-    } else {
-      videoRef.current.play();
-      setIsVideoPlaying(true);
+    if (window.YT) {
+      const ytPlayer = new window.YT.Player("youtube-video", {
+        events: {
+          onReady: (event) => {
+            setPlayer(event.target); // Store the player instance
+          },
+        },
+      });
     }
-  },[popUp, setHasLoggedIn])
+  }, []);
 
+  const handlePopUp = () => {
+    if (!hasLoggedIn) {
+      setPopUp(true);
+    } else {
+      setPopUp(false);
+      setOverlayActive(false); // Disable overlay after login
+    }
+  };
+
+  // Trigger video play after successful form submission
+  const handleFormSubmit = () => {
+    if (player) {
+      player.playVideo(); // Start video playback
+    }
+  };
 
   return (
     <Section
@@ -125,40 +147,52 @@ const Hero = () => {
           </button>
         </div>
 
-        {popUp && <PopUp popUp={popUp} setPopUp={setPopUp} setHasLoggedIn={setHasLoggedIn} />}
-        <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-20">
-          <div className="hover:cursor-pointer">
-            <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
-              <div className="relative bg-n-8 rounded-[1rem]">
-                <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
+        {popUp && (
+          <PopUp
+            popUp={popUp}
+            setPopUp={setPopUp}
+            setHasLoggedIn={setHasLoggedIn}
+            onFormSubmit={handleFormSubmit} // Pass callback to trigger video play
+          />
+        )}
 
-                <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[970/490] lg:aspect-[1024/490]">
-                  <div className="relative w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[15%]">
-                    <video
-                      onClick={handleVideoPlay}
-                      src={video1}
-                      playsInline
-                      controls
-                      ref={videoRef}
-                      width={1024}
-                      height={490}
-                      alt="AI"
-                    />
-                  </div>
+        <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-20">
+          <div className="relative z-10 p-0.5 rounded-2xl bg-conic-gradient">
+            <div className="relative bg-n-8 rounded-[1rem]">
+              <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
+              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[970/490] lg:aspect-[1024/490]">
+                {overlayActive && (
+                  <div
+                    className="absolute inset-0 bg-transparent z-20"
+                    onClick={handlePopUp}
+                  ></div>
+                )}
+                <div
+                  id="youtube-video"
+                  className="w-full h-full"
+                  style={{ position: "relative" }}
+                >
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/0_6AK52kSVQ?enablejsapi=1"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <Gradient />
-            </div>
-            <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
-              <img
-                src={heroBackground}
-                className="w-full"
-                width={1440}
-                height={1800}
-                alt="hero"
-              />
-            </div>
+          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
+            <img
+              src={heroBackground}
+              className="w-full"
+              width={1440}
+              height={1800}
+              alt="hero"
+            />
           </div>
           <BackgroundCircles />
         </div>

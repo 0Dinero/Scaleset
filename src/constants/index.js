@@ -299,12 +299,6 @@ export const socials = [
     url: "#",
   },
   {
-    id: "2",
-    title: "Instagram",
-    iconUrl: instagram,
-    url: "#",
-  },
-  {
     id: "3",
     title: "Telegram",
     iconUrl: telegram,

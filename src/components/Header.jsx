@@ -68,7 +68,7 @@ const Header = () => {
         <div className="button hidden mr-8 transition-colors text-[#FFD000] lg:block select-none">
           Clients Slots Left:
         </div>
-        <Button className="hidden lg:flex">420</Button>
+        <Button className="hidden lg:flex">11</Button>
 
         <Button
           className="ml-auto lg:hidden"
