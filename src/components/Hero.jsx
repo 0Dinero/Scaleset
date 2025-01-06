@@ -1,17 +1,13 @@
 import { curve, heroBackground, video1 } from "../assets";
-import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
-import { heroIcons } from "../constants";
-import { ScrollParallax } from "react-just-parallax";
-import { useRef, useState } from "react";
-import Notification from "./Notification";
+import { useRef, useState, useEffect } from "react";
 import logoBanner from "../assets/logo-banner-removebg.png";
 import CompanyLogos from "./CompanyLogos";
 import Input from "./Input";
 
 
-const PopUp = ({popUp, setPopUp}) => {
+const PopUp = ({popUp, setPopUp, setHasLoggedIn}) => {
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
 
@@ -19,7 +15,7 @@ const PopUp = ({popUp, setPopUp}) => {
      e.preventDefault();
      const name = user;
      const emailValue = email;
-     const webhookUrl ="https://discordapp.com/api/webhooks/1324678401151336510/cHF7wXXYSoT3tMhADLJS7Xl2ATFvVI_5P16QQLmK2D1z0xE8PaGhccw5gKgL3Y6lhc71";
+     const webhookUrl ="https://discord.com/api/webhooks/1325475986287890516/PANObR92uRU2-eCuR12Hl20qokKeLkGyWpPmq15momL_md_fK4h_0fIXNOZ7m28Q7FtH";
 
    
      const messageContent = `New Form Submission:\n- **Name**: ${name}\n- **Email**: ${emailValue}`;
@@ -36,11 +32,10 @@ const PopUp = ({popUp, setPopUp}) => {
          }),
        });
 
-       alert("Form submitted successfully! Message sent to Discord.");
+       setHasLoggedIn(true);
        setPopUp(false); // Close the popup
      } catch (error) {
        console.error("Error sending message to Discord:", error);
-       alert("Failed to send message to Discord.");
      }
    };
 
@@ -73,26 +68,25 @@ const Hero = () => {
   const [hasLoggedIn, setHasLoggedIn] = useState(false)
 
   const handleVideoPlay = () => {
-    if(!isVideoPlaying){
-      setPopUp(true);
-      videoRef.current.play();
-      setIsVideoPlaying(true);
-    } else if (isVideoPlaying) {
-      setPopUp(false);
+    if(!hasLoggedIn){
       videoRef.current.pause();
-      setIsVideoPlaying(false);
+      setPopUp(true)
+    } else {
+      setPopUp(false)
     }
   }
 
-  // useEffect(() => {
-  //   if (popUp){
-  //     videoRef.current.pause();
-  //     setIsVideoPlaying(false);
-  //   } else {
-  //     videoRef.current.play();
-  //     setIsVideoPlaying(true);
-  //   }
-  // },[popUp])
+  useEffect(() => {
+    if(popUp){
+      console.log("video is paused")
+      videoRef.current.pause();
+      setIsVideoPlaying(false);
+    } else {
+      videoRef.current.play();
+      setIsVideoPlaying(true);
+    }
+  },[popUp, setHasLoggedIn])
+
 
   return (
     <Section
@@ -103,11 +97,11 @@ const Hero = () => {
       id="hero"
     >
       <div className="container relative" ref={parallaxRef}>
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem] pt-[10%] lg:whitespace-nowrap">
           <h1 className="h1 mb-6">
-            Appointments That Turn Into Deals with{" "}
+            Appointments That Turn Into{" "}
             <span className="inline-block relative">
-              Scaleset{" "}
+              Deals{" "}
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
@@ -121,17 +115,19 @@ const Hero = () => {
             We help you scale by making result-driven appointment setting
             campaigns for your business
           </p>
-          <a href="#how-to-use">
-            <Button white>Book a call</Button>
-          </a>
+          <button className="mx-16 active:scale-95 transition-all duration-100">
+            <a
+              className="border-color-1 scale-100 rounded-xl border-2 px-4 py-3 font-bold text-[#FFD000] bg-color-1"
+              href="#how-to-use"
+            >
+              Book A Call
+            </a>
+          </button>
         </div>
 
-        {popUp && <PopUp popUp={popUp} setPopUp={setPopUp}/>}
-        <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
-          <a onClick={handleVideoPlay} className="hover:cursor-pointer">
-            <div className="play-icon absolute text-9xl font-bold text-black">
-              hi
-            </div>
+        {popUp && <PopUp popUp={popUp} setPopUp={setPopUp} setHasLoggedIn={setHasLoggedIn} />}
+        <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-20">
+          <div className="hover:cursor-pointer">
             <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
               <div className="relative bg-n-8 rounded-[1rem]">
                 <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
@@ -139,35 +135,16 @@ const Hero = () => {
                 <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[970/490] lg:aspect-[1024/490]">
                   <div className="relative w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[15%]">
                     <video
+                      onClick={handleVideoPlay}
                       src={video1}
                       playsInline
                       controls
                       ref={videoRef}
-                      className=""
                       width={1024}
                       height={490}
                       alt="AI"
                     />
                   </div>
-
-                  {/* <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" /> */}
-
-                  <ScrollParallax isAbsolutelyPositioned>
-                    <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
-                      {heroIcons.map((icon, index) => (
-                        <li className="p-5" key={index}>
-                          <img src={icon} width={24} height={25} alt={icon} />
-                        </li>
-                      ))}
-                    </ul>
-                  </ScrollParallax>
-
-                  <ScrollParallax isAbsolutelyPositioned>
-                    <Notification
-                      className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                      title="Instant Response"
-                    />
-                  </ScrollParallax>
                 </div>
               </div>
 
@@ -182,7 +159,7 @@ const Hero = () => {
                 alt="hero"
               />
             </div>
-          </a>
+          </div>
           <BackgroundCircles />
         </div>
 

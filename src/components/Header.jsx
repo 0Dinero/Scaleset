@@ -36,7 +36,8 @@ const Header = () => {
           <img
             src={logoBanner}
             width={190}
-            className="object-cover h-10"
+            
+            className="object-cover h-11"
             alt="Brainwave"
           />
         </a>

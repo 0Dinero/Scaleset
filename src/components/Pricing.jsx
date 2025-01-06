@@ -39,12 +39,14 @@ const Pricing = () => {
         </div>
 
         <div className="flex justify-center mt-10">
-          <a
-            className="text-xs font-code font-bold tracking-wider uppercase border-b"
-            href="#how-to-use"
-          >
-            Book A Call now
-          </a>
+          <button className="mx-16 active:scale-95 transition-all duration-100">
+            <a
+              className="border-color-1 scale-100 rounded-xl border-2 px-4 py-3 font-bold text-[#FFD000] bg-color-1"
+              href="#how-to-use"
+            >
+              Book A Call
+            </a>
+          </button>
         </div>
       </div>
     </Section>

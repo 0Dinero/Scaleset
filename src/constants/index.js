@@ -42,26 +42,32 @@ export const navigation = [
     id: "0",
     title: "Home",
     url: "#hero",
+    onlyMobile: true,
   },
   {
     id: "1",
+    title: "Our Strategy",
+    url: "#hero",
+  },
+  {
+    id: "2",
     title: "Testimonials",
     url: "#features",
   },
   {
-    id: "2",
-    title: "Our Strategy",
-    url: "#strategy",
+    id: "3",
+    title: "Services",
+    url: "#pricing",
   },
   {
     id: "4",
-    title: "Book A Call",
-    url: "#how-to-use",
-  },
-  {
-    id: "3",
     title: "Case Study",
     url: "#roadmap",
+  },
+  {
+    id: "5",
+    title: "Book A Call",
+    url: "#how-to-use",
   },
 ];
 

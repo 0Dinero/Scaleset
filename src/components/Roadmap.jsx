@@ -75,7 +75,16 @@ From Some Of Our Clients"
         href="#how-to-use"
         className="flex justify-center mt-12 md:mt-15 xl:mt-20"
       >
-        <Button>Book A Call Now</Button>
+         <button
+            className="mx-16 active:scale-95 transition-all duration-100"
+          >
+            <a
+              className="border-color-1 scale-100 rounded-xl border-2 px-4 py-3 font-bold  text-[#FFD000] bg-color-1"
+              href="#how-to-use"
+            >
+              Book A Call
+            </a>
+          </button>
       </a>
     </div>
   </Section>
