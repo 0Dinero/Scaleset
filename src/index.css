@@ -116,6 +116,7 @@
     hsl(43deg 51% 7%) 96%,
     hsl(0deg 0% 0%) 100%
   );
+  border: black 2px solid;
 }
 
 .testimonial{

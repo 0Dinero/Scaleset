@@ -22,6 +22,8 @@ const Footer = () => {
             </a>
           ))}
         </ul>
+
+        <div className="text-n-4 ">VAT Number: 45055329</div>
       </div>
     </Section>
   );

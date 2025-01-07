@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "./BookBtn";
 import Heading from "./Heading";
 import Section from "./Section";
 import Tagline from "./Tagline";
@@ -15,7 +15,7 @@ const Roadmap = () => (
 From Some Of Our Clients"
       />
 
-      <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
+      <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem] mb-10">
         {roadmap.map((item) => {
           const status = item.status === "done" ? "Done" : "In progress";
           return (
@@ -71,21 +71,12 @@ From Some Of Our Clients"
         <Gradient />
       </div>
 
-      <a
-        href="#how-to-use"
-        className="flex justify-center mt-12 md:mt-15 xl:mt-20"
-      >
-         <button
-            className="mx-16 active:scale-95 transition-all duration-100"
-          >
-            <a
-              className="border-color-1 scale-100 rounded-xl border-2 px-4 py-3 font-bold  text-[#FFD000] bg-color-1"
-              href="#how-to-use"
-            >
-              Book A Call
-            </a>
-          </button>
-      </a>
+      <h5 className="tagline mb-6 text-center ">
+        Are you looking for the same success?<br />
+        Book a non-binding call to see if we're a match
+      </h5>
+
+      <Button/>
     </div>
   </Section>
 );

@@ -3,6 +3,7 @@ import { smallSphere, stars } from "../assets";
 import Heading from "./Heading";
 import PricingList from "./PricingList";
 import { LeftLine, RightLine } from "./design/Pricing";
+import Button from "./BookBtn";
 
 const Pricing = () => {
   return (
@@ -28,7 +29,7 @@ const Pricing = () => {
         </div>
 
         <Heading
-          tag="Get started with Scale Set"
+          tag="Get more clients, while saving more time"
           title="Our Services That Help You Scale"
         />
 
@@ -39,14 +40,7 @@ const Pricing = () => {
         </div>
 
         <div className="flex justify-center mt-10">
-          <button className="mx-16 active:scale-95 transition-all duration-100">
-            <a
-              className="border-color-1 scale-100 rounded-xl border-2 px-4 py-3 font-bold text-[#FFD000] bg-color-1"
-              href="#how-to-use"
-            >
-              Book A Call
-            </a>
-          </button>
+          <Button/>
         </div>
       </div>
     </Section>

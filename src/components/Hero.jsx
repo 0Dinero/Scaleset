@@ -4,6 +4,7 @@ import Section from "./Section";
 import { BackgroundCircles, BottomLine } from "./design/Hero";
 import logoBanner from "../assets/logo-banner-removebg.png";
 import CompanyLogos from "./CompanyLogos";
+import Button from "./BookBtn";
 import Input from "./Input";
 
 const PopUp = ({ popUp, setPopUp, setHasLoggedIn, onFormSubmit }) => {
@@ -61,13 +62,8 @@ const PopUp = ({ popUp, setPopUp, setHasLoggedIn, onFormSubmit }) => {
         <div className="w-[90%] md:w-[60%] lg:w-[40%]">
           <Input title={"Email"} set={setEmail} value={email} />
         </div>
-        <div className="">
-          <button
-            type="submit"
-            className="hover:text-color-1 transition-colors duration-300"
-          >
-            Continue Watching The Video
-          </button>
+        <div className="bg-[#6427D6] hover:bg-black transition-all duration-300 rounded-lg px-5 py-3 font-bold text-lg hover:text-[#6427D6] text-white active:scale-95">
+          <button type="submit">Continue Watching The Video</button>
         </div>
       </form>
     </div>
@@ -119,11 +115,11 @@ const Hero = () => {
       id="hero"
     >
       <div className="container relative" ref={parallaxRef}>
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem] pt-[10%] lg:whitespace-nowrap">
+        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem] lg:whitespace-nowrap">
           <h1 className="h1 mb-6">
             Appointments That Turn Into{" "}
             <span className="inline-block relative">
-              Deals{" "}
+              Deals{" "}  
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
@@ -137,14 +133,7 @@ const Hero = () => {
             We help you scale by making result-driven appointment setting
             campaigns for your business
           </p>
-          <button className="mx-16 active:scale-95 transition-all duration-100">
-            <a
-              className="border-color-1 scale-100 rounded-xl border-2 px-4 py-3 font-bold text-[#FFD000] bg-color-1"
-              href="#how-to-use"
-            >
-              Book A Call
-            </a>
-          </button>
+          <Button/>
         </div>
 
         {popUp && (
@@ -160,7 +149,7 @@ const Hero = () => {
           <div className="relative z-10 p-0.5 rounded-2xl bg-conic-gradient">
             <div className="relative bg-n-8 rounded-[1rem]">
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
-              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[970/490] lg:aspect-[1024/490]">
+              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[970/490] lg:aspect-[1024/490] hover:cursor-pointer">
                 {overlayActive && (
                   <div
                     className="absolute inset-0 bg-transparent z-20"

@@ -12,7 +12,7 @@ const Benefits = () => {
     const container = scrollContainerRef.current;
 
     if (container) {
-      const scrollSpeed = 10;
+      const scrollSpeed = 1;
       let animationFrame;
 
       const originalContent = container.innerHTML;
