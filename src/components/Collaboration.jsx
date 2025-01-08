@@ -4,30 +4,7 @@ import { collabApps, collabContent, collabText } from "../constants";
 import Button from "./Button";
 import Section from "./Section";
 import { LeftCurve, RightCurve } from "./design/Collaboration";
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/all";
-import {useGSAP} from "@gsap/react"
-
-gsap.registerPlugin(ScrollTrigger);
 const Collaboration = () => { 
-
-  useGSAP(() => {
-    gsap.set("#tool-wheel", {
-      rotate: "0deg",
-    });
-
-    gsap.from("#tool-wheel", {
-      rotate: "180deg",
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: "#tool-wheel",
-        start: "-1600px center",
-        end: "center center",
-        scrub: true,
-      },
-    });
-  });
-  
   return (
     <Section crosses id={"strategy"}>
       <div className="container lg:flex">

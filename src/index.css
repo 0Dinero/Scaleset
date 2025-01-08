@@ -96,22 +96,19 @@
     hsl(261deg 69% 50%) 67%,
     hsl(48deg 87% 46%) 100%
   );
-  background-size: 400% 400%; /* Increased size for smooth animation */
+  background-size: 400% 400%;
   animation: gradientLoop 8s linear infinite;
   border: black 2px solid;
 }
 
 @keyframes gradientLoop {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 40%;
   }
   100% {
     background-position: 100% 100%;
   }
 }
-
-
-
 
 .testimonial{
   background: linear-gradient(to right bottom, #4820A3 25%, #CCB000);

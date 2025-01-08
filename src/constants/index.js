@@ -91,7 +91,7 @@ export const brainwaveServicesIcons = [
   sliders04,
 ];
 
-export const roadmap = [
+export const caseStudies = [
   {
     id: "0",
     title: "Voice recognition",
@@ -205,7 +205,7 @@ export const collabApps = [
   },
 ];
 
-export const pricing = [
+export const services = [
   {
     id: "0",
     title: "Done-For-You",
@@ -232,7 +232,7 @@ export const pricing = [
   },
 ];
 
-export const benefits = [
+export const Testimonials = [
   {
     id: "0",
     title: "Company 1",

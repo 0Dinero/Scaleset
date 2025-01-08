@@ -1,4 +1,4 @@
-import { benefits } from "../constants";
+import { Testimonials } from "../constants";
 import Heading from "./Heading";
 import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
@@ -47,7 +47,7 @@ const Benefits = () => {
           className="flex overflow-hidden gap-10 mb-10"
           style={{ scrollBehavior: "smooth" }}
         >
-          {benefits.map((item, index) => (
+          {Testimonials.map((item, index) => (
             <div
               className="testimonial block relative p-0.5 bg-no-repeat bg-[length:100%_100%] w-[70dvw] md:w-[40vw] lg:w-[25svw]"
               key={index}
