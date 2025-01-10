@@ -39,12 +39,6 @@ import {
 
 export const navigation = [
   {
-    id: "0",
-    title: "Home",
-    url: "#hero",
-    onlyMobile: true,
-  },
-  {
     id: "1",
     title: "Our Strategy",
     url: "#hero",

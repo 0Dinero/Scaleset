@@ -15,7 +15,7 @@ const PopUp = ({ popUp, setPopUp, setHasLoggedIn, onFormSubmit }) => {
     e.preventDefault();
     const name = user;
     const emailValue = email;
-    const webhookUrl = "https://discordapp.com/api/webhooks/1324678401151336510/cHF7wXXYSoT3tMhADLJS7Xl2ATFvVI_5P16QQLmK2D1z0xE8PaGhccw5gKgL3Y6lhc71";
+    const webhookUrl ="https://discord.com/api/webhooks/1325475986287890516/PANObR92uRU2-eCuR12Hl20qokKeLkGyWpPmq15momL_md_fK4h_0fIXNOZ7m28Q7FtH";
 
     const messageContent = `New Form Submission:\n- **Name**: ${name}\n- **Email**: ${emailValue}`;
 
