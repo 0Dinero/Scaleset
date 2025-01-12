@@ -73,7 +73,7 @@ const Roadmap = () => (
           <Gradient />
         </div>
 
-        <h5 className="tagline mb-6 text-center ">
+        <h5 className="tagline mb-6 text-center font-bold scale-110">
           Are you looking for the same success?<br />
           Book a non-binding call to see if we're a match
         </h5>

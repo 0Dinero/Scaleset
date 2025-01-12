@@ -3,7 +3,7 @@ import Button from "./BookBtn";
 const CompanyLogos = ({ className }) => {
   return (
     <div className={className}>
-      <h5 className="tagline mb-6 text-center ">
+      <h5 className="tagline mb-6 text-center font-bold scale-110">
         Are you interested to know more? <br />
         Book a non-binding call to see if we're a match
       </h5>
