@@ -5,6 +5,7 @@ import PricingList from "./PricingList";
 import { LeftLine, RightLine } from "./design/Pricing";
 import Button from "./BookBtn";
 import { Element } from "react-scroll";
+import { Gradient } from "./design/Services";
 
 const Pricing = () => {
   return (
@@ -46,6 +47,9 @@ const Pricing = () => {
             </div>
           </div>
       </Element>
+      <div className="absolute top-[20%] left-[20%]">
+        <Gradient/> 
+      </div>
     </Section>
   );
 };

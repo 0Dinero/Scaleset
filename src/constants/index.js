@@ -102,6 +102,7 @@ export const caseStudies = [
     date: "May 2023",
     status: "progress",
     imageUrl: roadmap2,
+    colorful: true,
   },
   {
     id: "2",
@@ -110,6 +111,7 @@ export const caseStudies = [
     date: "May 2023",
     status: "done",
     imageUrl: roadmap3,
+    colorful: true,
   },
   {
     id: "3",
@@ -118,6 +120,7 @@ export const caseStudies = [
     date: "May 2023",
     status: "progress",
     imageUrl: roadmap4,
+    colorful: true,
   },
 ];
 

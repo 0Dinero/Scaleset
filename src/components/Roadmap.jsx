@@ -71,6 +71,9 @@ const Roadmap = () => (
           })}
 
           <Gradient />
+          <div className="absolute right-0 bottom-[25%]">
+             <Gradient />
+          </div>
         </div>
 
         <h5 className="tagline mb-6 text-center font-bold scale-110">

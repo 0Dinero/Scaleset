@@ -121,9 +121,9 @@ const Hero = () => {
       crossesOffset="lg:translate-y-[5.25rem]"
       customPaddings
     >
-      <div className="container relative" ref={parallaxRef}>
+      <div className="container relative " ref={parallaxRef}>
         <Element name="home">
-          <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem] lg:whitespace-nowrap">
+          <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[10.25rem] lg:whitespace-nowrap">
             <h1 className="h1 mb-6">
               Appointments <br></br> That Turn Into{" "}
               <span className="inline-block relative">
