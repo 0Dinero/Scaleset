@@ -30,15 +30,14 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center whitespace-nowrap px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8" href="#hero">
+        <LinkScroll className="block w-[12rem] xl:mr-8 cursor-pointer" to="home" offset={-150}>
           <img
             src={logoBanner}
             width={190}
-            
             className="object-cover h-11"
             alt="Brainwave"
           />
-        </a>
+        </LinkScroll>
 
         <nav
           className={`${

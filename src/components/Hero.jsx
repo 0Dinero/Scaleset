@@ -120,15 +120,14 @@ const Hero = () => {
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       customPaddings
-      id="hero"
     >
-      <Element name="Our Strategy">
-        <div className="container relative" ref={parallaxRef}>
+      <div className="container relative" ref={parallaxRef}>
+        <Element name="home">
           <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem] lg:whitespace-nowrap">
             <h1 className="h1 mb-6">
               Appointments <br></br> That Turn Into{" "}
               <span className="inline-block relative">
-                Deals{" "}  
+                Deals{" "}
                 <img
                   src={curve}
                   className="absolute top-full left-0 w-full xl:-mt-2"
@@ -142,18 +141,19 @@ const Hero = () => {
               We help you scale by making result-driven appointment setting
               campaigns for your business
             </p>
-            <Button/>
+            <Button />
           </div>
+        </Element>
+        {popUp && (
+          <PopUp
+            popUp={popUp}
+            setPopUp={setPopUp}
+            setHasLoggedIn={setHasLoggedIn}
+            onFormSubmit={handleFormSubmit} // Pass callback to trigger video play
+          />
+        )}
 
-          {popUp && (
-            <PopUp
-              popUp={popUp}
-              setPopUp={setPopUp}
-              setHasLoggedIn={setHasLoggedIn}
-              onFormSubmit={handleFormSubmit} // Pass callback to trigger video play
-            />
-          )}
-
+        <Element name="Our Strategy">
           <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-20">
             <div className="relative z-10 p-0.5 rounded-2xl bg-conic-gradient">
               <div className="relative bg-n-8 rounded-[1rem]">
@@ -194,12 +194,12 @@ const Hero = () => {
             </div>
             <BackgroundCircles />
           </div>
+        </Element>
 
-          <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />
-        </div>
+        <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />
+      </div>
 
-        <BottomLine />
-      </Element>
+      <BottomLine />
     </Section>
   );
 };
