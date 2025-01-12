@@ -5,6 +5,7 @@ import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
+import { Link as LinkScroll } from "react-scroll";
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -12,16 +13,13 @@ const Header = () => {
   const toggleNavigation = () => {
     if (openNavigation) {
       setOpenNavigation(false);
-      enablePageScroll();
     } else {
       setOpenNavigation(true);
-      disablePageScroll();
     }
   };
 
   const handleClick = () => {
     if (!openNavigation) return;
-    enablePageScroll();
     setOpenNavigation(false);
   };
 
@@ -49,8 +47,10 @@ const Header = () => {
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             {navigation.map((item) => (
-              <a
+              <LinkScroll
+                to={item.title}
                 key={item.id}
+                offset={-150}
                 href={item.url}
                 onClick={handleClick}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
@@ -58,7 +58,7 @@ const Header = () => {
                 } px-6 py-6 md:py-8 lg:-mx-5 lg:text-xs lg:font-semibold lg:text-n-1/50 lg:leading-5 lg:hover:text-n-1 xl:px-12`}
               >
                 {item.title}
-              </a>
+              </LinkScroll>
             ))}
           </div>
 
