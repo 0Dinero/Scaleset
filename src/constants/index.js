@@ -45,13 +45,13 @@ export const navigation = [
   },
   {
     id: "2",
-    title: "Testimonials",
-    url: "#features",
+    title: "Services",
+    url: "#pricing",
   },
   {
     id: "3",
-    title: "Services",
-    url: "#pricing",
+    title: "Testimonials",
+    url: "#features",
   },
   {
     id: "4",
