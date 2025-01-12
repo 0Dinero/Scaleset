@@ -7,6 +7,7 @@ import CompanyLogos from "./CompanyLogos";
 import Button from "./BookBtn";
 import Input from "./Input";
 import { Element } from "react-scroll";
+import close from "../assets/x-mark.png"
 
 const PopUp = ({ popUp, setPopUp, setHasLoggedIn, onFormSubmit }) => {
   const [user, setUser] = useState("");
@@ -41,9 +42,15 @@ const PopUp = ({ popUp, setPopUp, setHasLoggedIn, onFormSubmit }) => {
 
   return (
     <div
-      className="popup_window fixed top-[20%] left-[10%] rounded-xl px-3 py-7 bg-black h-[60dvh] w-[80dvw] lg:w-[60dvw] lg:left-[20%]"
+      className="popup_window fixed top-[20%] left-[10%] rounded-xl px-3 py-7 bg-black h-[63dvh] w-[80dvw] lg:w-[60dvw] lg:left-[20%]"
       style={{ zIndex: `${popUp ? "9999" : "-1"}` }}
     >
+      <div
+        onClick={() => setPopUp(false)}
+        className="absolute right-[-15px] top-[-15px] rounded-full border-2 border-black px-4 py-4 bg-[#FFD000] hover:bg-[#6427D6] transition-all duration-300 cursor-pointer"
+      >
+        <img height={10} width={10} src={close} alt="close" />
+      </div>
       <div className="flex justify-center max-md:justify-center lg:justify-start">
         <img
           src={logoBanner}
