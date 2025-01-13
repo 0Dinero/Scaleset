@@ -9,10 +9,10 @@ import { Gradient } from "./design/Services";
 
 const Pricing = () => {
   return (
-    <Section className="overflow-hidden" id="pricing">
+    <Section id="pricing">
       <Element name="Services">
         <div className="container relative z-2">
-          <div className="absolute !opacity-20 top-[27%] left-[20%]">
+          <div className="absolute opacity-30 top-[25%] left-[20%]">
             <Gradient />
           </div>
           <div className="hidden relative justify-center mb-[6.5rem] lg:flex">

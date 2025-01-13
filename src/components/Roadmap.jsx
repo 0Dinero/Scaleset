@@ -71,7 +71,7 @@ const Roadmap = () => (
           })}
 
           <Gradient />
-          <div className="absolute right-0 bottom-[35%]">
+          <div className="absolute right-[-40%] bottom-[35%]">
              <Gradient />
           </div>
         </div>
