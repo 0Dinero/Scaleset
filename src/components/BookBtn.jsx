@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-scroll";
 import styled from "styled-components";
 
 const Button = () => {
   return (
     <StyledWrapper>
-      <a href="#how-to-use" className="flex justify-center">
+      <Link to="Book A Call" className="flex justify-center">
         <button>
           <div className="svg-wrapper-1">
             <div className="svg-wrapper">
@@ -24,7 +25,7 @@ const Button = () => {
           </div>
           <span>Book A Call</span>
         </button>
-      </a>
+      </Link>
     </StyledWrapper>
   );
 };
