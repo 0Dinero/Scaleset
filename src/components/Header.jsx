@@ -49,9 +49,10 @@ const Header = () => {
               <LinkScroll
                 to={item.title}
                 key={item.id}
-                offset={-150}
+                offset={-100}
                 href={item.url}
                 spy
+                activeClass="nav-active"
                 onClick={handleClick}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
