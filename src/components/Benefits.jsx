@@ -42,7 +42,7 @@ const Benefits = () => {
         <div className="container relative z-2">
           <Heading
             className="md:max-w-md lg:max-w-2xl"
-            title="Feedback from our clients"
+            title="Feedback From Our Clients"
           />
 
           <div
