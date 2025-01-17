@@ -42,26 +42,31 @@ export const navigation = [
     id: "1",
     title: "Our Strategy",
     url: "#hero",
+    offset: -100,
   },
   {
     id: "2",
     title: "Services",
     url: "#pricing",
+    offset: -100,
   },
   {
     id: "3",
     title: "Testimonials",
     url: "#features",
+    offset: -50,
   },
   {
     id: "4",
     title: "Case Study",
     url: "#roadmap",
+    offset: -50,
   },
   {
     id: "5",
     title: "Book A Call",
     url: "#how-to-use",
+    offset: -100,
   },
 ];
 

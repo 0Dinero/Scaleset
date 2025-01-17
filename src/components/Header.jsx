@@ -49,7 +49,7 @@ const Header = () => {
               <LinkScroll
                 to={item.title}
                 key={item.id}
-                offset={-100}
+                offset={item.offset}
                 href={item.url}
                 spy
                 activeClass="nav-active"
