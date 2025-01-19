@@ -11,7 +11,7 @@ const CompanyLogos = ({ className }) => {
         {companyLogos.map((logo, index) => {
           if (index === 2) {
             return (
-              <div className="flex items-center mx-5">
+              <div key={index} className="flex items-center mx-5">
                 <Button />
               </div>
             )
