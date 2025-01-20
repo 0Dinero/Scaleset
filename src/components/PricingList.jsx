@@ -1,6 +1,5 @@
 import { check } from "../assets";
 import { services } from "../constants";
-import Button from "./Button";
 
 const PricingList = () => {
   return (
@@ -15,14 +14,6 @@ const PricingList = () => {
           <p className="body-2 min-h-[4rem] mb-3 text-n-1/50">
             {item.description}
           </p>
-
-          {/* <Button
-            className="w-full mb-6"
-            href={item.price ? "/pricing" : "mailto:contact@jsmastery.pro"}
-            white={!!item.price}
-          >
-            {item.price ? "Get started" : "Contact us"}
-          </Button> */}
 
           <ul>
             {item.features.map((feature, index) => (

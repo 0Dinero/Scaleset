@@ -5,7 +5,6 @@ import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { useEffect, useRef } from "react";
 import { Element } from "react-scroll";
-import { Gradient } from "./design/Services";
 const Benefits = () => {
   const scrollContainerRef = useRef(null);
 
